@@ -1,6 +1,9 @@
-package school
+package schoology
 
 const (
+	//BaseURL Base URL for API calls
+	BaseURL = "https://api.schoology.com/v1/"
+
 	// Grade range values
 	GradeLevelNoGrade  = 0
 	GradeLevelPreK     = 1

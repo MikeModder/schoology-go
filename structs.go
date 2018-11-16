@@ -1,6 +1,6 @@
-package school
+package schoology
 
-//School school
+//School Represents a school
 type School struct {
 	ID         string `json:"id"`
 	Title      string `json:"title"`
@@ -8,7 +8,7 @@ type School struct {
 	Address2   string `json:"address2"`
 	City       string `json:"city"`
 	State      string `json:"state"`
-	PostalCode int    `json:"postal_code"`
+	PostalCode string `json:"postal_code"`
 	Country    string `json:"country"`
 	Website    string `json:"website"`
 	Phone      string `json:"phone"`
@@ -21,6 +21,7 @@ type Building struct {
 	*School
 }
 
+//User user objcet
 type User struct {
 	ID                 string `json:"uid"`
 	SchoolID           string `json:"school_id"`
@@ -55,6 +56,7 @@ type User struct {
 	AdditionalBuilding string `json:"additional_buildings"`
 }
 
+//ExtendedUser user but with the extended fields
 type ExtendedUser struct {
 	*User
 	SubjectsTaught string `json:"subjects_taught"`
@@ -68,6 +70,7 @@ type ExtendedUser struct {
 	Activites      string `json:"activites"`
 }
 
+//Group A group
 type Group struct {
 	ID           string `json:"id"`
 	BuildingID   string `json:"building_id"`
@@ -89,6 +92,7 @@ type Group struct {
 	GroupCode string `json:"group_code"`
 }
 
+//Course a course
 type Course struct {
 	ID                   string  `json:"id"`
 	BuildingID           string  `json:"building_id"`
