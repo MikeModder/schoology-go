@@ -5,6 +5,7 @@ import (
 	"encoding/json"
 	"fmt"
 	"net/http"
+	"net/url"
 
 	"github.com/garyburd/go-oauth/oauth"
 )
@@ -26,6 +27,11 @@ func SetCredentials(key, secret string) {
 		},
 	}
 
+}
+
+//Get Makes an authenticated GET request and returns the raw http response
+func Get(url string, form url.Values) (*http.Response, error) {
+	return oauthClient.GetContext(ctx, emptyCreds, BaseURL+url, form)
 }
 
 func GetSchoolBuildings(id string) ([]Building, int, error) {
