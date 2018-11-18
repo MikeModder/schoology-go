@@ -106,3 +106,29 @@ type Course struct {
 	GradeLevelRangeEnd   int     `json:"grade_level_range_end"`
 	SubjectArea          int     `json:"subject_area"`
 }
+
+//CourseSection a section of a course(?)
+type CourseSection struct {
+	ID                string   `json:"id"`
+	Title             string   `json:"section_title"`
+	SectionCode       string   `json:"section_code"`
+	SectionSchoolCode string   `json:"section_school_code"`
+	AccessCode        string   `json:"access_code"`
+	GradingPeriods    []int    `json:"grading_periods"`
+	Description       string   `json:"description"`
+	ProfileURL        string   `json:"profile_url"`
+	Location          string   `json:"location"`
+	MeetingDays       []string `json:"meeting_days"`
+	StartTime         string   `json:"start_time"`
+	EndTime           string   `json:"end_time"`
+	ClassPeriods      []int    `json:"class_periods"`
+	Options           struct {
+		CourseFormat              int    `json:"course_format"`
+		WeightedGradingCategories string `json:"weighted_grading_categories"`
+		CanUploadDocument         string `json:"upload_document"`
+		CanCreateDiscussion       string `json:"create_discussion"`
+		CanMemberPost             string `json:"member_post"`
+		CanMemberPostComment      string `json:"member_post_comment"`
+	} `json:"options"`
+	Synced string `json:"synced"`
+}
